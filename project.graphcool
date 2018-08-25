@@ -1,0 +1,53 @@
+# project: cjjq4d00e1ee40189opoksh4r
+# version: 8
+
+type File @model {
+  contentType: String!
+  createdAt: DateTime!
+  id: ID! @isUnique
+  name: String!
+  secret: String! @isUnique
+  size: Int!
+  updatedAt: DateTime!
+  url: String! @isUnique
+}
+
+type User @model {
+  id: ID! @isUnique
+  username: String! @isUnique
+  fullname: String
+  image: String
+  likes: [Like!]! @relation(name: "UsersLikes")
+  posts: [Post!]! @relation(name: "UsersPosts")
+  comments: [Comment!]! @relation(name: "UsersComments")
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type Post @model {
+  id: ID! @isUnique
+  image: String
+  text: String
+  postedBy: User! @relation(name: "UsersPosts")
+  comments: [Comment!]! @relation(name: "CommentsOnPost")
+  likes: [Like!]! @relation(name: "LikesOnPost")
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type Comment @model {
+  id: ID! @isUnique
+  text: String
+  post: Post! @relation(name: "CommentsOnPost")
+  postedBy: User! @relation(name: "UsersComments")
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type Like @model {
+  id: ID! @isUnique
+  user: User! @relation(name: "UsersLikes")
+  post: Post! @relation(name: "LikesOnPost")
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
