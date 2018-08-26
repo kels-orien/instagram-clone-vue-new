@@ -1,5 +1,5 @@
 # project: cjjq4d00e1ee40189opoksh4r
-# version: 8
+# version: 10
 
 type File @model {
   contentType: String!
@@ -22,12 +22,13 @@ type User @model {
   comments: [Comment!]! @relation(name: "UsersComments")
   createdAt: DateTime!
   updatedAt: DateTime!
+  email: String @isUnique
+  password: String
 }
 
 type Post @model {
   id: ID! @isUnique
   image: String
-  text: String
   postedBy: User! @relation(name: "UsersPosts")
   comments: [Comment!]! @relation(name: "CommentsOnPost")
   likes: [Like!]! @relation(name: "LikesOnPost")
