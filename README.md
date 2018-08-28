@@ -16,8 +16,8 @@ $ git clone https://github.com/kels-orien/instagram-clone-vue-new.git
 
 
 ## Project setup
-```
-npm install
+$ cd instagram-clone-vue
+$ npm install
 ```
 
 [Development] 
