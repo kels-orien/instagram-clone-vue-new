@@ -13,7 +13,7 @@ Vue.config.productionTip = false;
 //2
 const httpLink = new HttpLink({
   // You should use an absolute URL here
-  uri: "https://api.graph.cool/simple/v1/cjjq4d00e1ee40189opoksh4r"
+  uri: "__SIMPLE_API_ENDPOINT__"
 });
 
 //3
@@ -29,7 +29,6 @@ const authMiddleware = new ApolloLink((operation, forward) => {
   return forward(operation);
 });
 
-
 const apolloClient = new ApolloClient({
   // 4
   link: authMiddleware.concat(httpLink),
@@ -39,7 +38,6 @@ const apolloClient = new ApolloClient({
 
 // 5
 Vue.use(VueApollo);
-
 
 //6
 const apolloProvider = new VueApollo({

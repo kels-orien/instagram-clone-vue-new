@@ -368,7 +368,7 @@ a, a:visited {
     resize: none;
 } 
    
-Post__create-comment--input, Post__create-comment--field {
+.Post__create-comment--input, .Post__create-comment--field {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
