@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "postinstall": "npm run build",
+    "start": "node server.js"
   },
   "dependencies": {
     "apollo-cache-inmemory": "^1.2.8",
@@ -20,6 +22,15 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.0",
     "@vue/cli-service": "^3.0.0",
-    "vue-template-compiler": "^2.5.17"
+    "@vue/test-utils": "^1.0.0-beta.24",
+    "expect": "^23.5.0",
+    "express": "^4.17.1",
+    "jsdom": "^12.0.0",
+    "jsdom-global": "^3.0.2",
+    "mocha": "^5.2.0",
+    "mocha-webpack": "^1.1.0",
+    "serve-static": "^1.14.1",
+    "vue-template-compiler": "^2.5.17",
+    "webpack-node-externals": "^1.7.2"
   }
 }

@@ -13,7 +13,7 @@ Vue.config.productionTip = false;
 //2
 const httpLink = new HttpLink({
   // You should use an absolute URL here
-  uri: "__SIMPLE_API_ENDPOINT__"
+  uri: process.env.SIMPLE_API_ENDPOINT
 });
 
 //3
