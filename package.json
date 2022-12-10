@@ -13,7 +13,7 @@
     "apollo-client": "^2.4.0",
     "apollo-link": "^1.2.2",
     "apollo-link-http": "^1.5.4",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "graphql": "^0.13.2",
     "graphql-tag": "^2.9.2",
     "serve-static": "^1.14.1",
